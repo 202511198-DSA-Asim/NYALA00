@@ -7,7 +7,8 @@
 - Added the two documented but missing integrity tests to `tests/14_constraint_tests.sql`: nonexistent goods category and agreement end before start. Both use temporary updates and separate rollbacks. They have not been executed against a database.
 - Added reviewed SVG and PNG ERDs with six visible foreign-key connections. Preserved the original pgAdmin source and original screenshot. The source metadata matches the SQL table definitions.
 - Rewrote evidence documentation to distinguish static calculations, supplied screenshots, and unverified expected-error tests. Recorded both EXPLAIN plans without claiming an index-caused speed improvement.
-- Clarified existing-database use, one-time setup, manual expected-error testing, and identity sequence behavior. Group member names remain pending; none were invented.
+- Clarified existing-database use, one-time setup, manual expected-error testing, and identity sequence behavior.
+- In the approved follow-up, organized the README into the 16 requested sections and added the eight names from the leader-supplied roster. The approved task allocation records assigned responsibilities; completion and original authorship are not inferred. The presentation link and outstanding execution evidence remain pending.
 - Removed the empty `KOSOOM.MD` placeholder from the reviewed repository tree at the user's request. The original Git commit remains available in history.
 
 ## Validation performed
