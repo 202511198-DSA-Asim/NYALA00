@@ -280,11 +280,11 @@ The test scripts cover:
 
 After the temporary tests, the tariff table should retain 12 records and no temporary test changes.
 
-Screenshots, observed results, static checks, and evidence gaps are recorded in [test results](docs/test_results.md). The two added integrity tests have not been executed against the working database.
+Screenshots, observed results, static checks, and evidence gaps are recorded in [test results](docs/test_results.md). The user subsequently executed all security and integrity test cases on 2026-11-05; ten original screenshots document the results and final cleanup.
 
 The review parsed 14 SQL files (96 statements), checked relative documentation links, compared ERD metadata to the schema, and independently calculated sample counts, date statuses, averages, and non-overlap. No database connection, modification, or fresh rebuild was performed during the review.
 
-Direct error outputs for the security and integrity tests remain pending. The relevant successful intermediate security-test outputs also need to be captured. Final cleanup counts alone do not prove that each expected error occurred. The corrected Q1 parses, but a fresh runtime result was not captured in this review.
+Direct screenshots now show both permission denials, the reader-view result, the editor update, and all four constraint rejections. Cleanup shows 12 tariffs and no temporary test records or notes. The corrected Q1 parses, but a fresh runtime result was not captured in this review.
 
 See [test results](docs/test_results.md), [screenshots](docs/screenshots/), and [review notes](docs/review_notes.md) for the evidence and its limits.
 
@@ -363,7 +363,8 @@ After each member completes and confirms their work, record the actual contribut
 - [x] README organized into the 16 requested sections; names and approved responsibilities recorded.
 - [x] Technical references documented.
 - [ ] Member review of the documentation and SQL explanations completed.
-- [ ] Outstanding execution evidence captured and test results updated.
+- [x] Security and integrity tests 13–14 evidenced with screenshots and test results updated.
+- [ ] Fresh Q1/HAVING execution evidence captured.
 - [ ] Individual completed contributions confirmed and documented.
 - [ ] Google Drive presentation link added and lecturer access checked.
 - [ ] Teammate repository invitations/access checked.

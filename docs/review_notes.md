@@ -4,11 +4,11 @@
 
 - Added the missing semicolon after Q1 in `sql/08_queries.sql`. The original file fails PostgreSQL parsing at the next SELECT; all four corrected queries parse.
 - Renamed `docs/test_results.md.txt` to `docs/test_results.md`, repairing the README link.
-- Added the two documented but missing integrity tests to `tests/14_constraint_tests.sql`: nonexistent goods category and agreement end before start. Both use temporary updates and separate rollbacks. They have not been executed against a database.
+- Added the two documented but missing integrity tests to `tests/14_constraint_tests.sql`: nonexistent goods category and agreement end before start. Both use temporary updates and separate rollbacks. They were subsequently executed by the user; the follow-up screenshots show both expected constraint rejections.
 - Added reviewed SVG and PNG ERDs with six visible foreign-key connections. Preserved the original pgAdmin source and original screenshot. The source metadata matches the SQL table definitions.
 - Rewrote evidence documentation to distinguish static calculations, supplied screenshots, and unverified expected-error tests. Recorded both EXPLAIN plans without claiming an index-caused speed improvement.
 - Clarified existing-database use, one-time setup, manual expected-error testing, and identity sequence behavior.
-- In the approved follow-up, organized the README into the 16 requested sections and added the eight names from the leader-supplied roster. The approved task allocation records assigned responsibilities; completion and original authorship are not inferred. The presentation link and outstanding execution evidence remain pending.
+- In the approved follow-up, organized the README into the 16 requested sections and added the eight names from the leader-supplied roster. The approved task allocation records assigned responsibilities; completion and original authorship are not inferred. The presentation link remains pending; security and integrity execution evidence was supplied in the subsequent follow-up.
 - Removed the empty `KOSOOM.MD` placeholder from the reviewed repository tree at the user's request. The original Git commit remains available in history.
 
 ## Validation performed
@@ -27,7 +27,7 @@ Validation used `libpg-query` with PostgreSQL parser version `180004` (syntax pa
 | Documentation | Relative Markdown links checked; no `.md.txt` files in the final tree. |
 | Original evidence | Supplied screenshots and `.pgerd` preserved unchanged. |
 
-The original `NYALA00.rar` is retained unchanged. The existing `eac_trade_tariffs` database was neither connected to nor modified. No new database was created. Full execution, extension installation, runtime privileges and the new negative tests remain unverified in this review. Original screenshot results are described in [test_results.md](test_results.md).
+The original `NYALA00.rar` is retained unchanged. The reviewer did not connect to or modify the existing `eac_trade_tariffs` database. No new database was created. In the subsequent follow-up, the user manually ran tests 13–14 and supplied ten original screenshots proving the eight tested authorization/integrity behaviors and two cleanup results. These images are copied unchanged under descriptive names. This does not establish a fresh full installation or cover every constraint; Q1/HAVING runtime evidence remains outstanding. Results and evidence links are recorded in [test_results.md](test_results.md).
 
 ## Publication target
 

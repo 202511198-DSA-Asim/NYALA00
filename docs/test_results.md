@@ -6,7 +6,7 @@
 - Author-reported environment: PostgreSQL 18.6 with pgAdmin 4; screenshots identify PostgreSQL 18 Local but do not independently establish the minor version.
 - Database: `eac_trade_tariffs`; schema: `eac`.
 - Analytical reference date: `2026-11-05`.
-- Review: saved SQL, sample data, ERD, and supplied screenshots. No connection to or changes in the working database were made. No new database was created and no full rebuild was performed.
+- Review: saved SQL, sample data, ERD, and supplied screenshots. The reviewer made no database connection or changes; the user subsequently executed the rollback-contained tests documented below. No new database was created and no full rebuild was performed.
 
 ## Evidence reviewed
 
@@ -23,20 +23,27 @@
 | Security cleanup | [13_security_tests.png](screenshots/13_security_tests.png): current user `postgres`, 12 tariff rows, 0 temporary note changes. |
 | Constraint cleanup | [14_constraint_tests.png](screenshots/14_constraint_tests.png): 12 tariff rows, 0 negative tariffs, 0 overlap-test records. This does not prove each expected error occurred. |
 
-## Expected-error tests and evidence gaps
+## User-run security and integrity tests — 2026-11-05
 
 Run each transaction separately as an administrator permitted to use the test roles. Select from `BEGIN` through the operation, capture its Messages output, and then execute the following `ROLLBACK` separately, even after an error. Do not run the entire file as a batch. A failed transaction prevents subsequent work until rolled back.
 
 | Test | Expected SQLSTATE / constraint | Evidence status |
 |---|---|---|
-| Reader selects base tariff table | `42501` insufficient privilege | Script 13 present; direct error screenshot not supplied. |
-| Editor attempts DELETE (with `WHERE FALSE`) | `42501` insufficient privilege | Script 13 present; direct error screenshot not supplied. |
-| Negative tariff percentage | `23514` / `chk_tariff_percent` | Script 14 present; direct error screenshot not supplied. |
-| Duplicate overlapping tariff period | `23P01` / `ex_tariff_no_overlap` | Script 14 present; direct error screenshot not supplied. |
-| Goods category changed to nonexistent `-1` | `23503` / `fk_goods_category` | Added to script 14 during review; not executed. Requires category `-1` to be absent, as in the supplied sample. |
-| Agreement end date before start date | `23514` / `chk_trade_agreements_dates` | Added to script 14 during review; not executed. |
+| Reader selects base tariff table | `42501` insufficient privilege | Observed 42501: [reader denied](screenshots/13_02_reader_table_denied.png). |
+| Editor attempts DELETE (with `WHERE FALSE`) | `42501` insufficient privilege | Observed 42501: [editor denied](screenshots/13_04_editor_delete_denied.png). |
+| Negative tariff percentage | `23514` / `chk_tariff_percent` | Observed 23514 and named constraint: [negative tariff rejected](screenshots/14_01_negative_tariff_rejected.png). |
+| Duplicate overlapping tariff period | `23P01` / `ex_tariff_no_overlap` | Observed 23P01 and named constraint: [overlap rejected](screenshots/14_02_overlap_rejected.png). |
+| Goods category changed to nonexistent `-1` | `23503` / `fk_goods_category` | Observed 23503 and named constraint; message confirms category -1 absent: [invalid category rejected](screenshots/14_03_invalid_category_rejected.png). |
+| Agreement end date before start date | `23514` / `chk_trade_agreements_dates` | Observed 23514 and named constraint: [invalid dates rejected](screenshots/14_04_invalid_agreement_dates_rejected.png). |
 
-Script 13 also includes a successful reader-view SELECT and an editor UPDATE followed by rollback. The cleanup screenshot alone does not establish that those intermediate steps ran successfully. Capture those results separately if execution evidence is required for submission.
+The user ran these tests manually in the existing database and supplied the original pgAdmin screenshots. The reviewer inspected the images, not a live database connection. The six expected rejections above are individually evidenced, rather than inferred from cleanup counts.
+
+- [Reader view allowed](screenshots/13_01_reader_view_allowed.png): SELECT under nyala00_reader returned 10 active rows.
+- [Editor update allowed](screenshots/13_03_editor_update_allowed.png): UPDATE under nyala00_editor returned tariff_id 1 with the temporary note.
+- [Security cleanup](screenshots/13_05_security_cleanup.png): postgres, 12 tariffs, 0 remaining temporary security notes.
+- [Constraint cleanup after all four tests](screenshots/14_05_constraint_cleanup.png): 12 tariffs, 0 negative tariffs, 0 overlap-test records. Separate supplied screenshots showed successful rollbacks after the category and agreement-date tests.
+
+All eight tested authorization/integrity behaviors have direct result evidence. These tests do not cover every possible database constraint or input.
 
 All update tests require nonempty sample tables. The overlap insert can consume an identity sequence value even when the row is rejected or rolled back. Sequence gaps are normal and must not be repaired with a reset. See [PostgreSQL sequence behavior](https://www.postgresql.org/docs/18/functions-sequence.html).
 
@@ -59,7 +66,7 @@ Do not drop or recreate an existing index to reproduce a 'before' plan on the wo
 
 The review checks syntax for SQL files 01–14 without executing them, checks relative Markdown links, compares ERD metadata to the SQL table definitions, and independently calculates sample counts, date statuses, averages, and tariff non-overlap. Details are in [review notes](review_notes.md).
 
-Static checks do not establish runtime permissions, extension availability, transaction behavior, or successful installation. Saved screenshots predate the reviewed file changes and are preserved as original evidence.
+Static checks do not establish runtime permissions, extension availability, transaction behavior, or successful installation. The original archive screenshots are preserved. The ten additional screenshots above document the user's subsequent manual execution on 2026-11-05. A fresh Q1/HAVING runtime screenshot remains outstanding.
 
 ## Files
 
