@@ -331,9 +331,9 @@ These are technical implementation references. No official tariff dataset is cla
 
 ## 15. Presentation Link (Google Drive)
 
-**Status: pending preparation and upload. No presentation link is available yet.**
+[NYALA 00 Database Security presentation on Google Drive](https://docs.google.com/presentation/d/1BV4w4s0tWRzjOzBfvoJqfjAZtMj_zNYh/edit?usp=drivesdk&ouid=105777660682550958624&rtpof=true&sd=true)
 
-Mustafa Omer Mustafa is assigned to assemble and format the PowerPoint using each member's summary and one or two slides, then upload it to Google Drive. Mubarak Dawood is assigned to check the lecturer's access and add the verified shareable link here before final submission. PowerPoint files belong on Google Drive, not in this repository.
+The project lead will confirm that the lecturer has viewing access before submission.
 
 ## 16. Group Contributions
 
