@@ -222,9 +222,9 @@ Run the setup and sample-data files in this order:
 2. [02_goods.sql](sql/02_goods.sql)
 3. [03_trade_agreements.sql](sql/03_trade_agreements.sql)
 4. [04_tariff_rates.sql](sql/04_tariff_rates.sql)
-5. [05_sample_goods_and_countries.sql](sql/05_sample_goods_and_countries.sql)
-6. [06_sample_agreements.sql](sql/06_sample_agreements.sql)
-7. [07_sample_tariffs.sql](sql/07_sample_tariffs.sql)
+5. [05_sample_goods_and_countries.sql](sample-data/05_sample_goods_and_countries.sql)
+6. [06_sample_agreements.sql](sample-data/06_sample_agreements.sql)
+7. [07_sample_tariffs.sql](sample-data/07_sample_tariffs.sql)
 
 Then run the reporting and security files:
 
@@ -377,7 +377,9 @@ After each member completes and confirms their work, record the actual contribut
 NYALA00/
 ├── README.md
 ├── sql/
-│   └── SQL scripts 01–12
+│   └── SQL scripts 01–04 and 08–12
+├── sample-data/
+│   └── Sample data scripts 05–07
 ├── tests/
 │   ├── 13_security_tests.sql
 │   └── 14_constraint_tests.sql
@@ -390,7 +392,7 @@ NYALA00/
     └── ERD sources (.pgerd, .svg) and reviewed PNG
 ```
 
-The execution order listed above remains unchanged. Scripts 01–12 are located in `sql/`, and scripts 13–14 are located in `tests/`.
+The execution order listed above remains unchanged. Scripts 01–04 and 08–12 are in `sql/`, sample data scripts 05–07 are in `sample-data/`, and scripts 13–14 are in `tests/`.
 
 ### Supporting Documentation
 - [Implementation and test results](docs/test_results.md)
