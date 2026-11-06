@@ -364,9 +364,9 @@ After each member completes and confirms their work, record the actual contribut
 - [x] Technical references documented.
 - [ ] Member review of the documentation and SQL explanations completed.
 - [x] Security and integrity tests 13–14 evidenced with screenshots and test results updated.
-- [ ] Fresh Q1/HAVING execution evidence captured.
+- [x] Q1/HAVING run completed, as confirmed by the project lead.
 - [ ] Individual completed contributions confirmed and documented.
-- [ ] Google Drive presentation link added and lecturer access checked.
+- [x] Security presentation uploaded to Google Drive and linked in section 15.
 - [ ] Teammate repository invitations/access checked.
 - [ ] Required submission form sent.
 - [ ] Every member prepared to explain the project.
