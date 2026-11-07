@@ -1,6 +1,6 @@
 BEGIN;
 
--- 1. Create restricted roles for this project.
+-- 1. Create restricted roles for this project..
 CREATE ROLE nyala00_reader
     NOLOGIN
     NOSUPERUSER
@@ -17,7 +17,7 @@ CREATE ROLE nyala00_editor
     NOREPLICATION
     NOBYPASSRLS;
 
--- 2. Remove general access to project objects.
+-- 2. Remove general access to project objects..
 -- PUBLIC means every PostgreSQL role.
 REVOKE ALL PRIVILEGES ON SCHEMA eac FROM PUBLIC;
 
