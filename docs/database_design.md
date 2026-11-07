@@ -1,4 +1,4 @@
-# Database Design and Data Dictionary
+# Database Design and Data Dictionary.
 
 ## 1. Design Overview
 
