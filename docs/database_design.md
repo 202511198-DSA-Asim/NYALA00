@@ -234,3 +234,5 @@ The views are ordinary views: they store query definitions, not separate copies 
 The [reviewed ERD](../diagrams/NYALA_00_ERD.svg) and [PNG export](../diagrams/NYALA_00_ERD.png) show all six foreign-key relationships, including the two separate country references in `tariff_rates`. Each child has exactly one referenced parent; a parent can have zero or more children.
 
 The original [pgAdmin source](../diagrams/NYALA_00_ERD.pgerd) is preserved. Its six tables, 26 columns, primary keys, unique keys, identity settings, nullability, and foreign keys agree with the saved SQL. The original [screenshot](screenshots/NYALA_00_ERD.png) has missing visible connectors, so it should not be used alone to explain relationships. Check and exclusion rules remain defined by SQL files 01–04; the diagram is not a database migration or a complete constraint export.
+<!-- Documentation reviewed by: Moaz Mohammed Yacoub -->
+
