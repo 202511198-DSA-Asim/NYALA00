@@ -392,7 +392,7 @@ NYALA00/
 
 The execution order listed above remains unchanged. Scripts 01–04 and 08–12 are in `sql/`, sample data scripts 05–07 are in `sample-data/`, and scripts 13–14 are in `tests/`.
 
-### Supporting Documentation
+### Supporting Documentation:
 - [Implementation and test results](docs/test_results.md)
 - [Database design and data dictionary](docs/database_design.md)
 - [Implementation screenshots](docs/screenshots/)
