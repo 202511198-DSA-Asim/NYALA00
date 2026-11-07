@@ -331,9 +331,7 @@ These are technical implementation references. No official tariff dataset is cla
 
 ## 15. Presentation Link (Google Drive)
 
-[NYALA 00 Database Security presentation on Google Drive](https://docs.google.com/presentation/d/1BV4w4s0tWRzjOzBfvoJqfjAZtMj_zNYh/edit?usp=drivesdk&ouid=105777660682550958624&rtpof=true&sd=true)
-
-The project lead will confirm that the lecturer has viewing access before submission.
+[NYALA 00 presentation folder on Google Drive](https://drive.google.com/drive/folders/1JxyRxzSZ6-IqUK_839iuId5UqCjROR8P)
 
 ## 16. Group Contributions
 
