@@ -11,8 +11,8 @@
 - **Development interface:** pgAdmin 4
 - **Database name:** `eac_trade_tariffs`
 - **Schema:** `eac`
-- **GitHub username:** `mbarkdlwd-blip`
-- **Repository:** [YEAR-2-DATA-SCIENCE-SQL-COURSE/NYALA00](https://github.com/YEAR-2-DATA-SCIENCE-SQL-COURSE/NYALA00)
+- *GitHub username:** `mbarkdlwd-blip`
+- **Repository:* [YEAR-2-DATA-SCIENCE-SQL-COURSE/NYALA00](https://github.com/YEAR-2-DATA-SCIENCE-SQL-COURSE/NYALA00)
 
 ## 2. Group Members
 
